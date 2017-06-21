@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lixeiras Inteligentes</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <!-- Custom Styles theme -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="padding: 0;">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img alt="Brand"  height="50" src="icon.png" /> 
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>                  
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Início <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Documentação</a></li>            
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Ajuda</a></li>            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- Nav Bar End -->
+
+    <div class="container">
+
+    <h2><center>Painel de Monitoramento</center></h2>    
+
+    <!-- Connection panel -->
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <a class="chevron-toggle" data-toggle="collapse" data-target="#demo" href="#demo">
+                  <span id="connectionStatus">Conexão - Desconectado.</span>
+            </a>
+          </div>
+          <div class="panel-body collapse in" id="demo">          
+            <form>
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <div class="form-group">
+                    <label for="clientConnectButton"></label>
+                    <input type="hidden" id="hostInput" value="iot.eclipse.org">
+                    <input type="hidden" id="portInput" value="80">
+                    <input type="hidden" id="clientIdInput" value="javascript-client">
+                    <input type="hidden" id="pathInput" value="/ws">
+                    <input type="hidden" id="keepAliveInput" value="60">
+                    <input type="hidden" id="timeoutInput" value="3">
+                    <input type="hidden" id="lwQosInput" value="0">
+                    <input type="hidden" id="lwRetainInput" value="">
+                    <input type="hidden" id="lwMInput" value="">
+                    <input type="hidden" id="userInput" value="">
+                    <input type="hidden" id="passInput" value="">
+                    <input type="hidden" id="sslInput" value="">
+                    <input type="hidden" id="cleanSessionInput" value="">                    
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="row">
+
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <label for="pathInput">Path</label>
+                    <input type="text" class="form-control" >
+                    
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <label for="userInput">Username</label>
+                    <input type="text" class="form-control" id="userInput">
+                  </div>
+                </div>
+
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <label for="passInput">Password</label>
+                    <input type="password" class="form-control" id="passInput">
+                  </div>
+                </div>
+
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <label for="keepAliveInput">Keep-Alive</label>
+                    <input type="text" class="form-control" id="keepAliveInput" value="60">
+                    
+                  </div>
+                </div>
+
+                <div class="col-lg-1">
+                  <div class="form-group">
+                    <label for="timeoutInput">Timeout</label>
+                    <input type="text" class="form-control" id="timeoutInput" value="3">
+
+                  </div>
+                </div>
+
+                <div class="col-lg-1">
+                  <div class="form-group">
+                    <label for="sslInput">TLS</label>
+                    <input type="checkbox" class="special-checkbox" id="sslInput" value="">
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="form-group">
+                    <label for="cleanSessionInput">Clean Session</label>
+                    <input type="checkbox" class="special-checkbox" id="cleanSessionInput" value="">
+                  </div>
+
+                </div>
+              </div>
+              <hr> -->
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                  <div class="form-group" style="text-align: center;">                                        
+                    <input type="text" class="form-control" id="lwtInput" placeholder="Insira o Topico" value="udesc">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                  <div class="form-group" style="text-align: center;">
+                    <a id="clientConnectButton" class="btn btn-default"  onclick="connectionToggle();">Conectar</a>
+                  </div>
+                </div>
+                <!-- <div class="col-lg-1">
+                  <div class="form-group">
+                    <label for="lwQosInput">QoS</label>
+                    <select class="form-control" id="lwQosInput">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-1">
+                  <div class="form-group">
+                    <label for="lwRetainInput">Retain</label>
+                    <input type="checkbox" class="special-checkbox" id="lwRetainInput" value="">
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <div class="form-group">
+                    <label for="lwMInput">Last Will Message</label>
+                    <textarea class="form-control" id="lwMInput" rows="3"></textarea>
+                  </div>
+                </div> -->
+              </div>
+          </div>
+          </form>
+  </div>
+  <!-- End of Connection panel -->
+
+
+  <div class="row">
+    <!-- Subscription panel -->
+    <div class="col-md-12 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          
+        <a class="chevron-toggle" data-toggle="collapse" data-target="#subscribeCollapse" href="#subscribeCollapse">
+                  Inscrever-se
+            </a>
+        </div>
+        <div class="panel-body" id="subscribeCollapse">
+
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="subscribeTopicInput" class="col-sm-3 control-label">Tópico</label>
+              <div class="col-lg-6 ">
+                <input type="text" class="form-control" id="subscribeTopicInput" value="udesc/" disabled>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subscribeQosInput" class="col-sm-3 control-label">QoS</label>
+              <div class="col-lg-6 ">
+                <select class="form-control" id="subscribeQosInput" disabled>
+                  <option>0</option>
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button id="subscribeButton" type="button" class="btn btn-default" onclick="subscribe();" disabled>Inscrever-se</button>
+                <button id="unsubscribeButton" type="button" class="btn btn-default" onclick="unsubscribe();" disabled>Cancelar Inscrição</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End of Subscription panel -->
+    <!-- Publish panel -->
+    <div class="col-md-6 col-sm-12" style="display: none;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Publicar
+        </div>
+        <div class="panel-body" id="publishCollapse">
+          <form >
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="form-group">
+                  <label for="publishTopicInput">Topic</label>
+                    <input type="text" class="form-control" id="publishTopicInput" value="LixeirasUDESC" disabled>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="form-group">
+                  <label for="publishQosInput">QoS</label>
+                    <select class="form-control" id="publishQosInput" disabled>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                </div>
+              </div>
+              <div class="col-lg-1">
+                <div class="form-group">
+                  <label for="publishRetainInput">Manter</label>
+                  <input type="checkbox" class="special-checkbox" id="publishRetainInput" value="" disabled>
+                </div>
+              </div>
+              <div class="col-lg-1">
+                <div class="form-group">
+                  <label for="publishButton"></label>
+                  <button id="publishButton" type="button" class="btn btn-default" onclick="publish();" disabled>Publicar</a>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-lg-12 col-sm-12">
+              <div class="form-group">
+                <label for="publishMessageInput">Mensagem</label>
+                <textarea class="form-control" id="publishMessageInput" rows="3"></textarea>
+              </div>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End of Publish panel -->
+  </div>
+  <div class="row">
+
+
+    <div class="col-md-12 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a class="chevron-toggle" data-toggle="collapse" data-target="#subscriptionsCollapse" href="#collapseOne">
+                        Ultimos recebimentos
+                    </a>
+        </div>
+        <div class="panel-body collapse in fixed-height-panel" id="subscriptionsCollapse">
+          <table class="table table-hover table-condensed tableSection" id="lastMessageTable">
+            <thead>
+              <tr>
+                <th>Tópico</th>
+                <th>    Medição    </th>
+                <th>%</th>
+                <th>Hora</th>                
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-12 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a class="chevron-toggle" data-toggle="collapse" data-target="#historyCollapse" href="#collapseOne">
+                        Histórico
+                        </a>
+        </div>
+        <div class="panel-body collapse in fixed-height-panel" id="historyCollapse">
+          <span class="right"><a href="#" onclick="clearHistory()">Limpar Histórico</a></span>
+          <table class="table table-hover table-condensed  tableSection" id="incomingMessageTable">
+
+            <thead>
+              <tr>
+                <th>Tópico</th>
+                <th>Medição</th>
+                <th>Hora</th>
+                <th>QoS</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Source Paho MQTT Client-->
+  <script src="mqttws31.js"></script>
+  <!--<script src="../src/paho-mqtt.js"></script>-->
+
+  <!-- Utility Javascript -->
+  <script src="utility.js"></script>
+
+  <!-- Javascript used for Bootstrap Theme -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+
+</html>
